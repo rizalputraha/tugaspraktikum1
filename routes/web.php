@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('template.main0042');
+// });
+
+Route::get('/', [BlogController::class, 'home']);
+Route::get('/artikel', [BlogController::class, 'artikel']);
+Route::get('/kontak', [BlogController::class, 'kontak']);
